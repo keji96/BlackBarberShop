@@ -1,0 +1,14 @@
+<h1>Add a new barber</h1>
+
+<%= form_for @shop, :html=>{:class => 'six columns'} do |f| %>
+  <%=f.text_field :BarbershopName, :id =>"name", :placeholder => "Barbershop Name"%>
+  <%=f.text_field :BarbershopStreetAddress, :id =>"street",:placeholder => "Barbershop Street Address"%>
+  <%=f.text_field :BarbershopCity, :id =>"city",:placeholder => "Barbershop City"%>
+  <%=f.text_field :BarbershopState, :id =>"state",:placeholder => "Barbershop State"%>
+  <%=f.text_field :BarbershopZipCode, :id =>"zip", :placeholder => "Barbershop ZipCode"%>
+  <%=f.text_field :BarbershopCountry, :id =>"country", :placeholder => "Barbershop Country"%>
+  <%=f.text_field :BarbershopPhone, :id =>"phone", :placeholder => "Barbershop Phone"%>
+  <%=f.hidden_field :latitude, :id =>"lat", :value => 40.7%>
+  <%=f.hidden_field :longitude, :id =>"long", :value => -73.9%>
+  <%=f.submit, :id =>"shopsubmit"%>
+<%end%>
