@@ -1,7 +1,6 @@
 console.log("bbs lat long")
 
 var $submit = $('#test');
-console.log($submit)
 var $city = $('#city');
 var $street = $('#street');
 var $state = $('#state');

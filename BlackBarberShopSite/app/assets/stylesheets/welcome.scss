@@ -3,30 +3,64 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-
   background-color: snow;
 }
 
 h1{
   text-align: center;
 }
-a.button {
+a.login {
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
     text-decoration: none;
     color: blue;
-    left:0px;
+    right:0px;
     top:0px;
-
-  margin-bottom: 1px;
+    margin-bottom: 1px;
+    position: absolute;
+}
+a.signup {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: blue;
+    right:0px;
+    top:30px;
+    margin-bottom: 1px;
+    position: absolute;
 }
 
 #welcomeheader {
+    top: 0px;
     width: 100%;
     height: 100px;
     margin:auto;
     text-align:center;
+    display:inline-block;
+    background-color: red;
+}
 
+img{
+position: absolute;
+  left: 0px;
+  height:auto;
+  width: auto;
+  max-width: 5%;
+  max-height: 5%;
+}
+
+#location{
+  position: absolute;
+  left: 200px;
+  top: 0px;
+}
+
+
+#find{
+position:absolute;
+left:600px;
+top:0px;
 
 }

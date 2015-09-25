@@ -4,29 +4,31 @@
     <title>Geocoding service</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" charset="utf-8">
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" charset="utf-8">
+      <style>
          html, body {
            height: 100%;
            margin: 0;
            padding: 0;
          }
          #map {
-           height: 500px;
+           height: 900px
          }
     </style>
   </head>
   <body>
     <header>
        <div id="welcomeheader">
+         <img id="barber" src="/assets/barber.jpg" alt="" />
           <form class="" action="index.html" method="post">
-            <input class="location four columns" type="text" name="name" value="" placeholder="Current Location">
-            <input class "three columns" type="submit" value="Find Barbers">
+            <input id="location" class="four columns" type="text" name="name" value="" placeholder="Current Location">
+            <input id="find" class="three columns" type="submit" value="Find Barbers">
           </form>
-          <a href="/log_in" class="button">Log In</a>
-          <a href="/sign_up" class="button">Sign Up</a>
+          <a href="/log_in" class="two columns login">Log In</a>
+          <a href="/sign_up" class="two columns signup">Sign Up</a>
        </div>
     </header>
+
     <div class="wrapper">
           <div class="map-section">
             <div class="row">

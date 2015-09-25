@@ -8,8 +8,6 @@ function googlegetaddress(pos){
 
         var $location = $('.location')
         $location.attr('value',"Current Location:" + results[1]["formatted_address"])
-        console.log(results[1]["formatted_address"])
-
       } else {
         window.alert('No results found');
       }
