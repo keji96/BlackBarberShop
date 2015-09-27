@@ -16,11 +16,13 @@ post '/sessions' =>'sessions#create'
 delete '/sessions' =>'sessions#destroy', as: :log_out
 
 #Routes for Barbershop api
-get '/api/barbershops' => 'barbershops#index'
+get '/api/barbershops' => 'barbershops#index', as: :locations
 
 #Routes for Barbershops
-get '/barbershops/new' => 'barbershops#newshop', as: :barbershops
+get '/barbershops/new' => 'barbershops#new', as: :barbershops
 post '/barbershops/new' => 'barbershops#create'
+
+get '/barbershops/:id' => 'barbershops#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

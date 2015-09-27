@@ -2,8 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
   background-color: snow;
+}
+
+#map {
+  height: 1000px;
+  margin: 0;
+
 }
 
 h1{
@@ -31,30 +40,35 @@ a.signup {
     margin-bottom: 1px;
     position: absolute;
 }
+a.barbertag{
+  text-decoration: none;
+  color:black;
+}
 
 #welcomeheader {
     top: 0px;
     width: 100%;
     height: 100px;
-    margin:auto;
+    margin:0;
     text-align:center;
     display:inline-block;
-    background-color: red;
+    background:#FFF;
 }
 
 img{
-position: absolute;
-  left: 0px;
+  position: absolute;
+  left: 10px;
   height:auto;
   width: auto;
-  max-width: 5%;
-  max-height: 5%;
-}
+  max-width: 10%;
+  max-height: 10%;
+ }
 
-#location{
+#search{
   position: absolute;
   left: 200px;
   top: 0px;
+  width: 30%;
 }
 
 
@@ -63,4 +77,26 @@ position:absolute;
 left:600px;
 top:0px;
 
+}
+
+#barbers-list{
+   height: 1000px;
+   margin: 0px;
+  overflow: scroll;
+}
+
+.barberinfo{
+  background:#fcfcfc;
+      border:1px solid #ccc;
+      border-bottom:2px solid #bbb;
+      border-top:1px solid #ddd;
+      border-radius:10px;
+      -webkit-border-radius:10px;
+      -moz-border-radius:10px;
+
+}
+
+.barberinfo:hover{
+   background-color:yellow;
+    z-index: 10
 }

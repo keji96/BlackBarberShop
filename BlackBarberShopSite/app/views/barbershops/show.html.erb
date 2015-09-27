@@ -1,0 +1,6 @@
+<h1> page for <%=@shops.BarbershopName%> </h1>
+
+
+   <% @shops.opendates.each do |t| %>
+         <%= t.day_of_the_week%>
+   <%end%>

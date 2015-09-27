@@ -1,0 +1,35 @@
+<h1>Add a new barber</h1>
+
+<%= form_for(@shop) do |f| %>
+  <% if @shop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shop.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% @shop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="four columns">
+    <%= f.label :BarbershopName %><br>
+    <%= f.text_field :BarbershopName %>
+  </div>
+  <div class="four columns">
+    <%= f.label :BarbershopFullAddress %><br>
+    <%= f.text_field :BarbershopFullAddress %>
+  </div>
+  <div class="four columns">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="four columns">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
