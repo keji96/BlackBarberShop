@@ -1,13 +1,15 @@
 class BarbershopsController < ApplicationController
   # GET /locations
   # GET /locations.json
+
+
   def index
     if params[:search].present?
-   render json: Barbershop.near(params[:search], 75)
+      render json:  Barbershop.near(params[:search], 10)
     else
-   render json: Barbershop.all
-  end
-end
+     render json: Barbershop.all
+   end
+ end
 
   # GET /locations/1
   # GET /locations/1.json

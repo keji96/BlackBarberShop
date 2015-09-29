@@ -5,9 +5,8 @@ function googlegetaddress(pos){
     geocoder.geocode({'location': pos}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       if (results[1]) {
-
-        var $location = $('.location')
-        $location.attr('value',"Current Location:" + results[1]["formatted_address"])
+        var $location = $('#search')
+        $location.attr('value', results[1]["formatted_address"])
       } else {
         window.alert('No results found');
       }

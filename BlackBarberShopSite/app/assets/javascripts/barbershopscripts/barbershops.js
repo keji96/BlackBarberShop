@@ -1,17 +1,37 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 //console.log("barbershop.js")
-
+//
 $( document ).ready(function() {
-    //console.log( "ready!" );
-    $( "#find" ).click(function() {
-      console.log( "Handler for .click() called." );
-      //getBarbers()
+//
+  $( "#target" ).click(function() {
+    getBarbers()
+  });
 
-    });
+
 });
+
+// var barbeshopData;
+// function barberShopGet(){
+//   console.log("clicked")
+//   $.ajax({
+//        url:'/api/barbershops',
+//        dataType: 'json',
+//        data:  {
+//          search: $('#search').val()
+//       }
+//
+//       }).done(function(data){
+//           barbeshopData = data
+//           getBarbers()
+//           console.log("success")
+//          });
+//
+// }
+
 function getBarbers(){
 console.log("clicked")
+
     // Model
     var Barber = Backbone.Model.extend({
 
@@ -20,14 +40,14 @@ console.log("clicked")
     // Collection
     var BarberCollection = Backbone.Collection.extend({
       model: Barber,
-      url: 'api/barbershops'
+      url:'/api/barbershops'
     });
 
     // Model View
     var BarberView = Backbone.View.extend({
-      // initialize: function(){
-      //   this.listenTo(this.model, 'change', this.render);
-      // },
+      initialize: function(){
+        this.listenTo(this.model, 'change', this.render);
+      },
       tagName: 'div',
       className: 'person',
       template: _.template( $('#barbershoptempplate').html() ),
@@ -51,11 +71,11 @@ console.log("clicked")
         var test = $currentlatlong.data()
 
         var barberObject;
-        var barbersObjects = this.collection.models;
+        var barbersObjects = this.collection.models;;
         for (var i = 0; i < barbersObjects.length; i++) {
           barberObject = barbersObjects[i];
           $view = new BarberView({model: barberObject});
-               console.log(barberObject)
+               //console.log(barberObject)
           $view.render();
           this.$el.append($view.$el);
         }
@@ -65,10 +85,10 @@ console.log("clicked")
     var barber = new BarberCollection();
     var barbersPainter = new BarberListView({
       collection: barber,
-      el: $('#countries-list')
+      el: $('#barbers-list')
     });
 
-    barber.fetch();
+    barber.fetch(({data: {search: $('#search').val()}}));
 
 
 }

@@ -1,6 +1,30 @@
-<h1> page for <%=@shops.BarbershopName%> </h1>
+<h1> <%=@shops.BarbershopName%> </h1>
 
-
+ <%= Date.today%>
+ <div class="twelve rows">
+   <table>
+     <tr>
+       <th>
+       </th>
+       <th>
+         Open
+       </th>
+       <th>
+         Closed
+       </th>
+     </tr>
    <% @shops.opendates.each do |t| %>
-         <%= t.day_of_the_week%>
+   <tr>
+     <td>
+       <%= t.day_of_the_week%>
+     </td>
+     <td>
+       <%= t.open.strftime('%l:%M %p')%>
+     </td>
+     <td>
+       <%= t.closed.strftime('%l:%M %p')%>
+     </td>
+     <td>
+    </tr>
    <%end%>
+   </table>
