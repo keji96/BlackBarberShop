@@ -12,9 +12,9 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.2/backbone.js"></script>
 
   <script type="text/template", id='barbershoptempplate'>
-  <a href="/barbershops/<%%=id%>">  <div class="barberinfo">
-      <h6><%%=BarbershopName%><h6><br>
-        <p>rating<p><p>closed open</p>
+  <a class="barbertag" href="/barbershops/<%%=id%>">  <div class="barberinfo">
+      <p><%%=BarbershopName%> is <%%=distance%>miles away<p>
+
     </div></a>
 
   </script>
@@ -22,7 +22,15 @@
 
 </head>
 <body>
-
+<header>
+  <div id="welcomeheader">
+    <img id="barber" src="/assets/barber.jpg" alt="" />
+     <input type="text" id="search" name="search" value="">
+     <input type="button" action="/" id="target" name="name" value="Find Barbers">
+     <a href="/log_in" class="two columns login">Log In</a>
+     <a href="/sign_up" class="two columns signup">Sign Up</a>
+  </div>
+</header>
 <%= yield %>
 
 </body>

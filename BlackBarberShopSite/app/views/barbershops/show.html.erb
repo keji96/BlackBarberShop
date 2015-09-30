@@ -1,7 +1,7 @@
 <h1> <%=@shops.BarbershopName%> </h1>
 
  <%= Date.today%>
- <div class="twelve rows">
+ <div class="one rows">
    <table>
      <tr>
        <th>
@@ -13,7 +13,8 @@
          Closed
        </th>
      </tr>
-   <% @shops.opendates.each do |t| %>
+  <% sorteddates = @shops.opendates.sort_by {|obj| obj.day_of_the_week}%>
+   <% sorteddates.each do |t| %>
    <tr>
      <td>
        <%= t.day_of_the_week%>

@@ -7,6 +7,7 @@ function googlegetaddress(pos){
       if (results[1]) {
         var $location = $('#search')
         $location.attr('value', results[1]["formatted_address"])
+         getBarbers()
       } else {
         window.alert('No results found');
       }

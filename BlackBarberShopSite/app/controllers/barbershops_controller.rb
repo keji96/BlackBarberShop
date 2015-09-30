@@ -2,20 +2,21 @@ class BarbershopsController < ApplicationController
   # GET /locations
   # GET /locations.json
 
-
   def index
     if params[:search].present?
-      render json:  Barbershop.near(params[:search], 10)
+      render json:  Barbershop.near(params[:search], 10).joins(:opendates)
+  
     else
-     render json: Barbershop.all
-   end
+      #render json: Opendate.joins("RIGHT JOIN barbershops ON barbershops.id=opendates.barbershop_id").all
+    render json:  Barbershop.joins(:opendates).all
+    end
  end
 
   # GET /locations/1
   # GET /locations/1.json
   def show
    @shops = Barbershop.find(params[:id])
-   @openclosed = Opendate.all
+
   end
 
   # GET /locations/new

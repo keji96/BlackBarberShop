@@ -55,7 +55,7 @@ a.barbertag{
     background:#FFF;
 }
 
-img{
+#barber{
   position: absolute;
   left: 10px;
   height:auto;
@@ -88,13 +88,13 @@ top:0px;
 
 .barberinfo{
   background:#fcfcfc;
-      border:1px solid #ccc;
-      border-bottom:2px solid #bbb;
-      border-top:1px solid #ddd;
-      border-radius:10px;
-      -webkit-border-radius:10px;
-      -moz-border-radius:10px;
-
+  border:1px solid #ccc;
+  border-bottom:2px solid #bbb;
+  border-top:1px solid #ddd;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  height:100px;
 }
 
 .barberinfo:hover{
@@ -102,8 +102,14 @@ top:0px;
     z-index: 10
 }
 
-
 .barbers-container{
 margin:0px;
+
+}
+
+
+.address{
+  left: 10.75em;
+	top: 3.25em;
 
 }
