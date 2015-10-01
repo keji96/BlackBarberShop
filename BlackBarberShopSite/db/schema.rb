@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930105010) do
+ActiveRecord::Schema.define(version: 20150930201255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,14 +26,14 @@ ActiveRecord::Schema.define(version: 20150930105010) do
   end
 
   create_table "barbershops", force: :cascade do |t|
-    t.string   "BarbershopCity"
-    t.string   "BarbershopCountry"
-    t.string   "BarbershopFullAddress"
-    t.string   "BarbershopPhone"
-    t.string   "BarbershopState"
-    t.string   "BarbershopStreetAddress"
-    t.string   "BarbershopZipCode"
-    t.string   "BarbershopName"
+    t.string   "barbershopcity"
+    t.string   "barbershopcountry"
+    t.string   "barbershopfulladdress"
+    t.string   "barbershopphone"
+    t.string   "barbershopstate"
+    t.string   "barbershopstreetaddress"
+    t.string   "barbershopzipcode"
+    t.string   "barbershopname"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.decimal  "latitude"
@@ -41,12 +41,20 @@ ActiveRecord::Schema.define(version: 20150930105010) do
   end
 
   create_table "opendates", force: :cascade do |t|
-    t.time     "closed"
+    t.integer  "closed"
     t.string   "day_of_the_week"
-    t.time     "open"
+    t.integer  "open_time"
     t.integer  "barbershop_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.float    "rating"
+    t.text     "recomendation"
+    t.integer  "barber_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|

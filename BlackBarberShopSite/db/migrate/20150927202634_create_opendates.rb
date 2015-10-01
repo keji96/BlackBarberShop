@@ -1,9 +1,9 @@
 class CreateOpendates < ActiveRecord::Migration
   def change
     create_table :opendates do |t|
-      t.time :closed
+      t.integer :closed
       t.string :day_of_the_week
-      t.time :open
+      t.integer :open_time
       t.integer :barbershop_id
       t.timestamps null: false
     end

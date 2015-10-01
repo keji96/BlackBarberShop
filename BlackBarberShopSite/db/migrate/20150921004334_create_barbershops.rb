@@ -1,14 +1,14 @@
 class CreateBarbershops < ActiveRecord::Migration
   def change
     create_table :barbershops do |t|
-      t.string :BarbershopCity
-      t.string :BarbershopCountry
-      t.string :BarbershopFullAddress
-      t.string :BarbershopPhone
-      t.string :BarbershopState
-      t.string :BarbershopStreetAddress
-      t.string :BarbershopZipCode
-      t.string :BarbershopName
+      t.string :barbershopcity
+      t.string :barbershopcountry
+      t.string :barbershopfulladdress
+      t.string :barbershopphone
+      t.string :barbershopstate
+      t.string :barbershopstreetaddress
+      t.string :barbershopzipcode
+      t.string :barbershopname
       t.timestamps null: false
     end
   end

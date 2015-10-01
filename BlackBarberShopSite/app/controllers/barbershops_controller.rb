@@ -4,13 +4,12 @@ class BarbershopsController < ApplicationController
 
   def index
     if params[:search].present?
-      render json:  Barbershop.near(params[:search], 10).joins(:opendates)
-  
+    weekday = Date.today.strftime("%A")
+    render json: Barbershop.near(params[:search], 5, :select => "opendates.*, barbershops.*").joins(:opendates).where("opendates.day_of_the_week = ?", weekday)
     else
-      #render json: Opendate.joins("RIGHT JOIN barbershops ON barbershops.id=opendates.barbershop_id").all
-    render json:  Barbershop.joins(:opendates).all
-    end
- end
+      render json: Barbershop.all
+  end
+end
 
   # GET /locations/1
   # GET /locations/1.json

@@ -13,8 +13,16 @@
 
   <script type="text/template", id='barbershoptempplate'>
   <a class="barbertag" href="/barbershops/<%%=id%>">  <div class="barberinfo">
-      <p><%%=BarbershopName%> is <%%=distance%>miles away<p>
-
+      <p><h6><%%=barbershopname%></h6> is <%%= distance.toFixed(2)%> mile(s) away
+          <%%day_of_the_week%> <%%open=open_time%> <%%closed=closed%>
+          <%%if(open < 1300){opentime = open + "AM"}else{opentime = open - 1200 + "PM"}%>
+           <%%if(closed < 1300){vlosedtime = closed + "AM"}else{closedtime = closed - 1200 + "PM"}%>
+          <%%d = new Date()%> <%%currentTime=parseInt(''+d.getHours()+d.getMinutes())%>
+            <%%if(currentTime > open && currentTime < closed){isOpened = "and is open until" + closedtime}else{
+              isOpened = "and is closed until " + opentime
+            }%>
+            <%%=isOpened%>
+        </p>
     </div></a>
 
   </script>

@@ -1,6 +1,7 @@
-<h1> <%=@shops.BarbershopName%> </h1>
+<h1> <%=@shops.barbershopname%> </h1>
 
- <%= Date.today%>
+ <%= Date.today.strftime("%A")%>
+ <%= Time.new%>
  <div class="one rows">
    <table>
      <tr>
@@ -20,7 +21,7 @@
        <%= t.day_of_the_week%>
      </td>
      <td>
-       <%= t.open.strftime('%l:%M %p')%>
+       <%= t.open_time.strftime('%l:%M %p')%>
      </td>
      <td>
        <%= t.closed.strftime('%l:%M %p')%>
@@ -29,3 +30,19 @@
     </tr>
    <%end%>
    </table>
+
+    <% @shops.barbers.each do |t| %>
+    <tr>
+    <td>
+      <%= t.name%>
+    </td>
+    <td>
+      <img src="<%=t.avatar%>>" alt="" />
+    </td>
+    <td>
+      <%= t.experience%>
+      </td>
+      <td>
+     </tr>
+    <%end%>
+    </table>

@@ -9,7 +9,7 @@ desc "Load open-closed data"
       Opendate.create({
           :closed => row[0],
           :day_of_the_week => row[1],
-          :open => row[2],
+          :open_time => row[2],
           :barbershop_id => row[3],
         })
     end
